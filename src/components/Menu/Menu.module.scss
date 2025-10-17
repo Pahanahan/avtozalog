@@ -1,0 +1,141 @@
+.menu {
+  margin-bottom: 25px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 0;
+  }
+
+  &__items {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #424242;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__link:hover {
+    color: #3087cc;
+  }
+
+  &__links-bottom {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.3s;
+  }
+
+  &__links-bottom--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &__link-bottom-money {
+    color: #424242;
+    width: 190px;
+  }
+  &__link-bottom-sales {
+    color: #424242;
+    width: 260px;
+  }
+
+  &__link-bottom-sales span {
+    font-weight: 600;
+  }
+
+  &__phone {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__phone-text {
+    font-weight: 600;
+    color: #3087cc;
+  }
+}
+
+@media (max-width: 1220px) {
+  .menu {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: all 0.5s;
+    transform: translateY(-140%);
+
+    &--visible {
+      transform: translateY(0);
+    }
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__items {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__links-bottom {
+      transform: translateX(-20%);
+    }
+  }
+}
+
+@media (max-width: 756px) {
+  .menu {
+    top: 150px;
+
+    &__links-bottom {
+      padding: 10px;
+      transform: translateX(-10%);
+    }
+
+    &__link-bottom-money {
+      font-size: 12px;
+      width: 145px;
+    }
+
+    &__link-bottom-sales {
+      font-size: 12px;
+      width: 195px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .menu {
+    top: 120px;
+
+    &__items {
+      gap: 10px;
+    }
+
+    &__link {
+      font-size: 14px;
+    }
+  }
+}

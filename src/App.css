@@ -1,0 +1,47 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #424242;
+  margin: 0;
+}
+
+.big-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.small-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+@media (max-width: 1400px) {
+  .small-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .small-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 756px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+}

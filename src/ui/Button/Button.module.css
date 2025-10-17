@@ -1,0 +1,35 @@
+.button {
+  width: 465px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(to right, #ff8a1e 0%, #ff621e 100%);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: linear-gradient(to right, #56abee 0%, #3994db 100%);
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.button:disabled {
+  background: #424242;
+}
+
+@media (max-width: 756px) {
+  .button {
+    font-size: 18px;
+    width: 280px;
+    height: 54px;
+  }
+}

@@ -1,0 +1,134 @@
+.car-loan {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 76px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+      115deg,
+      #ff8a1e 0%,
+      #ff621e 40%,
+      transparent 40%
+    );
+  }
+
+  &__right {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 67px;
+  }
+
+  &__text {
+    max-width: 500px;
+    margin-bottom: 37px;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 44px;
+  }
+
+  &__box-item {
+    list-style: none;
+    margin-bottom: 20px;
+    display: inline-flex;
+    position: relative;
+  }
+
+  &__box-item::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+  &__img {
+    margin-top: 59px;
+    margin-bottom: -5px;
+    padding-left: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .car-loan {
+    &__inner {
+      flex-direction: column;
+      background: linear-gradient(
+        57deg,
+        #ff8a1e 0%,
+        #ff621e 40%,
+        transparent 40%
+      );
+    }
+
+    &__left {
+      order: 1;
+    }
+
+    &__img {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 756px) {
+  .car-loan {
+    &__inner {
+      padding: 0 28px;
+    }
+
+    &__title {
+      font-size: 20px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+    }
+
+    &__right {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__box {
+      margin-bottom: 20px;
+    }
+
+    &__box-item::before {
+      top: 6px;
+    }
+
+    &__img {
+      margin-top: 0;
+      padding-left: 70px;
+      padding-bottom: 1px;
+      width: 90%;
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .car-loan {
+    &__text {
+      max-width: 250px;
+    }
+  }
+}

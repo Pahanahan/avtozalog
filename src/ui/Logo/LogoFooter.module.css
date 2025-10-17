@@ -1,0 +1,16 @@
+.logo {
+  cursor: pointer;
+}
+
+.logo__image {
+  background-image: url("../../assets/icons/footer-logo.svg");
+  background-repeat: no-repeat;
+  width: 166px;
+  height: 43px;
+}
+
+@media (max-width: 950px) {
+  .logo {
+    width: 100%;
+  }
+}
