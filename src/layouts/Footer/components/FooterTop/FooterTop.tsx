@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import LogoFooter from "../../../../ui/Logo/LogoFooter";
 
-import styles from "./FooterTop.module.css";
+import styles from "./FooterTop.module.scss";
 
 function FooterTop() {
   return (

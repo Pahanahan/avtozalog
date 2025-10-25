@@ -37,11 +37,3 @@
   font-weight: 600;
   font-style: normal;
 }
-
-@font-face {
-  font-display: swap;
-  font-family: "Inter";
-  src: url("../fonts/Inter-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}

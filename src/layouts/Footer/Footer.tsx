@@ -1,7 +1,7 @@
 import FooterTop from "./components/FooterTop/FooterTop";
 import FooterBottom from "./components/FooterBottom/FooterBottom";
 
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 
 function Footer() {
   return (

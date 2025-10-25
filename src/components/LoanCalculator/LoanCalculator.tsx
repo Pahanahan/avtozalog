@@ -11,7 +11,7 @@ function LoanCalculator() {
   const [month, setMonth] = useState<string>("1");
   const [phone, setPhone] = useState<string>("");
 
-  console.log(loanSum, userName, month, phone);
+  // console.log(loanSum, userName, month, phone);
 
   return (
     <div className={styles["calculator"]}>
