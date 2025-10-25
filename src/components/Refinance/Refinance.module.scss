@@ -1,0 +1,160 @@
+.refinance {
+  margin-bottom: 94px;
+  background-image: url("/public/images/refinance-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__bg {
+    padding: 80px 0 140px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 25px;
+  }
+
+  &__box-item {
+    font-size: 14px;
+    font-weight: 200;
+    color: #fff;
+  }
+
+  &__box-item-after {
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff8a1e 0%, #ff621e 100%);
+  }
+
+  &__text {
+    color: #fff;
+    max-width: 800px;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none;
+  }
+
+  &__list {
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__list-item {
+    color: #fff;
+  }
+}
+
+@media (max-width: 1000px) {
+  .refinance {
+    &__title {
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .refinance {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 756px) {
+  .refinance {
+    margin-bottom: 54px;
+
+    &__inner {
+      padding-bottom: 40px;
+    }
+
+    &__bg {
+      background-image: none;
+      background-color: #fff;
+      padding: 0;
+    }
+
+    &__img {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    &__list {
+      padding-left: 15px;
+    }
+
+    &__title {
+      color: #424242;
+    }
+
+    &__box {
+      gap: 20px;
+    }
+
+    &__box-item {
+      font-size: 12px;
+      color: #424242;
+    }
+
+    &__text {
+      color: #424242;
+    }
+
+    &__list-item {
+      color: #424242;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .refinance {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .refinance {
+    &__title {
+      font-size: 26px;
+    }
+
+    &__box {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      margin-bottom: 12px;
+    }
+
+    &__list {
+      margin-bottom: 12px;
+    }
+  }
+}

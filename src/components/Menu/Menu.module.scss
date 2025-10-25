@@ -107,8 +107,6 @@
 
 @media (max-width: 756px) {
   .menu {
-    top: 150px;
-
     &__links-bottom {
       padding: 10px;
       transform: translateX(-10%);
@@ -128,7 +126,7 @@
 
 @media (max-width: 520px) {
   .menu {
-    top: 120px;
+    top: 100px;
 
     &__items {
       gap: 10px;

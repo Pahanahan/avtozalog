@@ -4,3 +4,9 @@
   gap: 20px;
   margin-bottom: 164px;
 }
+
+@media (max-width: 756px) {
+  .box {
+    margin-bottom: 80px;
+  }
+}

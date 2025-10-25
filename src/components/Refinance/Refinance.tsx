@@ -1,7 +1,7 @@
 import Button from "../../ui/Button/Button";
 
 import refinanceBg from "../../assets/images/refinance-bg.jpg";
-import styles from "./Refinance.module.css";
+import styles from "./Refinance.module.scss";
 
 function Refinance() {
   return (
