@@ -14,7 +14,14 @@ function Modal() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    ctx.hideModal();
+
+    if (userName.trim().length > 0 && phone.trim().length > 10) {
+      setUserName("");
+      setPhone("");
+      ctx.hideModal();
+    }
+
+    return;
   };
 
   const handleClose = () => {
