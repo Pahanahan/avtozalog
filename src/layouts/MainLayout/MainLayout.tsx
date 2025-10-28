@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import Modal from "../../components/Modal/Modal";
 import Header from "../Header/Header";
 import Home from "../../pages/Home/Home";
+import BuyAuto from "../../pages/BuyAuto/BuyAuto";
 import Footer from "../Footer/Footer";
 
 import styles from "./MainLayout.module.css";
@@ -16,6 +17,7 @@ function MainLayout() {
       <div className={styles["content"]}>
         <Routes>
           <Route index element={<Home />} />
+          <Route path="/buy_auto" element={<BuyAuto />} />
         </Routes>
       </div>
       <Footer />

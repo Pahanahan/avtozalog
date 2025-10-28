@@ -9,11 +9,9 @@ import { refinanceData } from "../../data/refinanceData";
 import percent from "../../assets/images/percent.png";
 import twoPercent from "../../assets/images/two-percent.png";
 
-import styles from "./Home.module.scss";
-
 function Home() {
   return (
-    <div className={styles["home"]}>
+    <>
       <Refinace
         title={refinanceData[0].title}
         titleColor={refinanceData[0].titleColor}
@@ -74,7 +72,7 @@ function Home() {
       </BoxForTwoComponents>
       <VehicleCollateral />
       <Questions />
-    </div>
+    </>
   );
 }
 

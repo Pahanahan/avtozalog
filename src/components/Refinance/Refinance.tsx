@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 
 import Button from "../../ui/Button/Button";
 import ModalContext from "../../context/ModalContext";
 import { useWindowWidth } from "../../customHooks/useWindowWidth";
+import { getColor } from "./helpers/getColor";
 
 import styles from "./Refinance.module.scss";
 
@@ -35,39 +36,44 @@ function Refinance({
 
   const windowWidth = useWindowWidth();
 
-  let listItems;
-  let divItems;
+  const listItems = useMemo(
+    () =>
+      ul && ulColor
+        ? ul.map((li) => {
+            return (
+              <li
+                key={li}
+                style={{
+                  color: getColor(windowWidth, ulColor),
+                }}
+                className={styles["refinance__list-item"]}
+              >
+                {li}
+              </li>
+            );
+          })
+        : null,
+    [ul, ulColor, windowWidth]
+  );
 
-  if (ul) {
-    listItems = ul.map((li) => {
-      return (
-        <li
-          key={li}
-          style={{
-            color: windowWidth >= 756 ? ulColor : "#424242",
-          }}
-          className={styles["refinance__list-item"]}
-        >
-          {li}
-        </li>
-      );
-    });
-  }
-
-  if (div) {
-    divItems = div.map((item) => {
-      return (
-        <div
-          key={item}
-          style={{ color: windowWidth >= 756 ? divColor : "#424242" }}
-          className={styles["refinance__box-item"]}
-        >
-          <span className={styles["refinance__box-item-after"]}></span>
-          {item}
-        </div>
-      );
-    });
-  }
+  const divItems = useMemo(
+    () =>
+      div && divColor
+        ? div.map((item) => {
+            return (
+              <div
+                key={item}
+                style={{ color: getColor(windowWidth, divColor) }}
+                className={styles["refinance__box-item"]}
+              >
+                <span className={styles["refinance__box-item-after"]}></span>
+                {item}
+              </div>
+            );
+          })
+        : null,
+    [div, divColor, windowWidth]
+  );
 
   return (
     <div
@@ -80,18 +86,18 @@ function Refinance({
             <div className={styles["refinance__inner"]}>
               <h1
                 style={{
-                  color: windowWidth >= 756 ? titleColor : "#424242",
+                  color: getColor(windowWidth, titleColor),
                 }}
                 className={styles["refinance__title"]}
               >
                 {title}
               </h1>
               {div && (
-                <div className={styles["refinance__box"]}>{divItems}</div>
+                <div className={styles["refinance__box"]}>{divItems!}</div>
               )}
               <p
                 style={{
-                  color: windowWidth >= 756 ? textColor : "#424242",
+                  color: getColor(windowWidth, textColor),
                 }}
                 className={styles["refinance__text"]}
               >
