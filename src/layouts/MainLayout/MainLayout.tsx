@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 import Modal from "../../components/Modal/Modal";
 import Header from "../Header/Header";
@@ -10,7 +11,7 @@ import styles from "./MainLayout.module.css";
 function MainLayout() {
   return (
     <div className={styles["app"]}>
-      <Modal />
+      {createPortal(<Modal />, document.getElementById("modal")!)}
       <Header />
       <div className={styles["content"]}>
         <Routes>
