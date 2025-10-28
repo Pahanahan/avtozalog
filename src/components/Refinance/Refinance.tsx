@@ -2,63 +2,107 @@ import { useContext } from "react";
 
 import Button from "../../ui/Button/Button";
 import ModalContext from "../../context/ModalContext";
+import { useWindowWidth } from "../../customHooks/useWindowWidth";
 
-import refinanceBg from "../../assets/images/refinance-bg.jpg";
 import styles from "./Refinance.module.scss";
 
-function Refinance() {
+interface RefinanceProps {
+  title: string;
+  titleColor: string;
+  div?: string[];
+  divColor?: string;
+  text: string;
+  textColor: string;
+  ul?: string[];
+  ulColor?: string;
+  note?: string;
+  noteColor?: string;
+  img: string;
+}
+
+function Refinance({
+  title,
+  titleColor,
+  div,
+  divColor,
+  text,
+  textColor,
+  ul,
+  ulColor,
+  img,
+}: RefinanceProps) {
   const ctx = useContext(ModalContext);
 
+  const windowWidth = useWindowWidth();
+
+  let listItems;
+  let divItems;
+
+  if (ul) {
+    listItems = ul.map((li) => {
+      return (
+        <li
+          key={li}
+          style={{
+            color: windowWidth >= 756 ? ulColor : "#424242",
+          }}
+          className={styles["refinance__list-item"]}
+        >
+          {li}
+        </li>
+      );
+    });
+  }
+
+  if (div) {
+    divItems = div.map((item) => {
+      return (
+        <div
+          key={item}
+          style={{ color: windowWidth >= 756 ? divColor : "#424242" }}
+          className={styles["refinance__box-item"]}
+        >
+          <span className={styles["refinance__box-item-after"]}></span>
+          {item}
+        </div>
+      );
+    });
+  }
+
   return (
-    <div className={styles["refinance"]}>
+    <div
+      className={styles["refinance"]}
+      style={{ backgroundImage: `url(${img})` }}
+    >
       <div className="big-container">
         <div className={styles["refinance__bg"]}>
           <div className="small-container">
             <div className={styles["refinance__inner"]}>
-              <h1 className={styles["refinance__title"]}>
-                Рефинансирование займов по ПТС
+              <h1
+                style={{
+                  color: windowWidth >= 756 ? titleColor : "#424242",
+                }}
+                className={styles["refinance__title"]}
+              >
+                {title}
               </h1>
-              <div className={styles["refinance__box"]}>
-                <div className={styles["refinance__box-item"]}>
-                  <span className={styles["refinance__box-item-after"]}></span>
-                  Быстрое одобрение
-                </div>
-                <div className={styles["refinance__box-item"]}>
-                  <span className={styles["refinance__box-item-after"]}></span>
-                  Бесплатная консультация
-                </div>
-                <div className={styles["refinance__box-item"]}>
-                  <span className={styles["refinance__box-item-after"]}></span>
-                  Безопасная сделка
-                </div>
-              </div>
-              <p className={styles["refinance__text"]}>
-                Если вы взяли кредит, но слишком высокие ежемесячные выплаты,
-                рефинансирование кредита под залог авто может стать хорошим
-                решением для вас. Мы полностью закроем Ваш долг перед другой
-                финансовой организацией, а в случае если Вам необходимо
-                увеличить сумму финансирования, то предоставим денежные
-                средства.
+              {div && (
+                <div className={styles["refinance__box"]}>{divItems}</div>
+              )}
+              <p
+                style={{
+                  color: windowWidth >= 756 ? textColor : "#424242",
+                }}
+                className={styles["refinance__text"]}
+              >
+                {text}
               </p>
               <img
                 className={styles["refinance__img"]}
-                src={refinanceBg}
-                alt="car"
+                src={img}
+                alt="vehicle"
               />
-              <ul className={styles["refinance__list"]}>
-                <li className={styles["refinance__list-item"]}>
-                  -1% от вашей процентной ставки
-                </li>
-                <li className={styles["refinance__list-item"]}>
-                  Полная конфиденциальность
-                </li>
-                <li className={styles["refinance__list-item"]}>
-                  Быстрое переоформление
-                </li>
-                <li className={styles["refinance__list-item"]}>
-                  Только выгодные условия
-                </li>
-              </ul>
+              {ul && <ul className={styles["refinance__list"]}>{listItems}</ul>}
               <div className={styles["refinance__button"]}>
                 <Button onClick={ctx.showModal} type="button">
                   Отправить заявку

@@ -1,6 +1,5 @@
 .refinance {
   margin-bottom: 94px;
-  background-image: url("/public/images/refinance-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -11,7 +10,6 @@
   &__title {
     font-size: 50px;
     font-weight: 600;
-    color: #fff;
     margin-bottom: 12px;
   }
 
@@ -25,7 +23,6 @@
   &__box-item {
     font-size: 14px;
     font-weight: 200;
-    color: #fff;
   }
 
   &__box-item-after {
@@ -39,7 +36,6 @@
   }
 
   &__text {
-    color: #fff;
     max-width: 800px;
     margin-bottom: 40px;
   }
@@ -54,10 +50,6 @@
   &__list {
     padding-left: 20px;
     margin-bottom: 40px;
-  }
-
-  &__list-item {
-    color: #fff;
   }
 }
 
@@ -110,15 +102,6 @@
 
     &__box-item {
       font-size: 12px;
-      color: #424242;
-    }
-
-    &__text {
-      color: #424242;
-    }
-
-    &__list-item {
-      color: #424242;
     }
 
     &__button {

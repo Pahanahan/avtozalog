@@ -1,18 +1,30 @@
-import Refinance from "../../components/Refinance/Refinance";
+import Refinace from "../../components/Refinance/Refinance";
 import BoxForTwoComponents from "../../components/BoxForTwoComponents/BoxForTwoComponents";
 import PromotionBlockProps from "../../components/PromotionBlock/PromotionBlock";
 import LoanCalculator from "../../components/LoanCalculator/LoanCalculator";
 import VehicleCollateral from "../../components/VehicleCollateral/VehicleCollateral";
+import Questions from "../../components/Questions/Questions";
+import { refinanceData } from "../../data/refinanceData";
 
 import percent from "../../assets/images/percent.png";
 import twoPercent from "../../assets/images/two-percent.png";
+
 import styles from "./Home.module.scss";
-import Questions from "../../components/Questions/Questions";
 
 function Home() {
   return (
     <div className={styles["home"]}>
-      <Refinance />
+      <Refinace
+        title={refinanceData[0].title}
+        titleColor={refinanceData[0].titleColor}
+        div={refinanceData[0].div}
+        divColor={refinanceData[0].divColor}
+        text={refinanceData[0].text}
+        textColor={refinanceData[0].textColor}
+        ul={refinanceData[0].ul}
+        ulColor={refinanceData[0].ulColor}
+        img={refinanceData[0].img}
+      />
       <BoxForTwoComponents>
         <PromotionBlockProps
           title="Ставка от 2% в месяц"
