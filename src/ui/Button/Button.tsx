@@ -4,11 +4,17 @@ interface ButtonProps {
   children: string;
   type: "button" | "submit" | "reset";
   width?: string;
+  onClick?: () => void;
 }
 
-function Button({ children, type }: ButtonProps) {
+function Button({ children, type, width, onClick }: ButtonProps) {
   return (
-    <button type={type} className={styles["button"]}>
+    <button
+      onClick={onClick}
+      style={{ width: width }}
+      type={type}
+      className={styles["button"]}
+    >
       {children}
     </button>
   );

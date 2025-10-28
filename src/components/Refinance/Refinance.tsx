@@ -1,9 +1,14 @@
+import { useContext } from "react";
+
 import Button from "../../ui/Button/Button";
+import ModalContext from "../../context/ModalContext";
 
 import refinanceBg from "../../assets/images/refinance-bg.jpg";
 import styles from "./Refinance.module.scss";
 
 function Refinance() {
+  const ctx = useContext(ModalContext);
+
   return (
     <div className={styles["refinance"]}>
       <div className="big-container">
@@ -55,7 +60,9 @@ function Refinance() {
                 </li>
               </ul>
               <div className={styles["refinance__button"]}>
-                <Button type="button">Отправить заявку</Button>
+                <Button onClick={ctx.showModal} type="button">
+                  Отправить заявку
+                </Button>
               </div>
             </div>
           </div>
